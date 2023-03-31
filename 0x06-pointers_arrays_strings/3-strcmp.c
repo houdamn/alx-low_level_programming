@@ -1,20 +1,22 @@
 /**
- * _strncpy - copies a string
- * @dest: the buffer to copy the string to
- * @src: the string to be copied
- * @n: the maximum number of bytes to copy
+ * _strcmp - compares two strings
+ * @s1: first string to compare
+ * @s2: second string to compare
  *
- * Return: a pointer to the destination string
+ * Return: an integer less than, equal to, or greater than zero if s1 is found,
+ * respectively, to be less than, to match, or be greater than s2.
  */
-char *_strncpy(char *dest, char *src, int n)
+int _strcmp(char *s1, char *s2)
 {
-	int i;
+    int i = 0;
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[i] = src[i];
-	for (; i < n; i++)
-		dest[i] = '\0';
+    while (s1[i] != '\0' && s2[i] != '\0')
+    {
+        if (s1[i] != s2[i])
+            return (s1[i] - s2[i]);
+        i++;
+    }
 
-	return (dest);
+    return (s1[i] - s2[i]);
 }
 
