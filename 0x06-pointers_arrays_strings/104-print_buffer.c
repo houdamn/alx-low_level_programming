@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * print_buffer - Prints the content of a buffer
  * @b: Pointer to the buffer to print
@@ -52,7 +51,6 @@ void print_buffer(char *b, int size)
 				}
 			}
 		}
-
 		printf("\n");
 	}
 }
