@@ -1,27 +1,20 @@
-#include "main.h"
-#include <stdio.h>
-
-/**
- * main - check the code for
- *
- * Return: Always 0.
- */
 char *leet(char *str)
 {
-	int i, j;
-	char *leet = "aAeEoOtTlL44337011";
+  int i, j;
+  char leet_map[5][3] = {{'a', 'A', '4'}, {'e', 'E', '3'}, {'o', 'O', '0'}, {'t', 'T', '7'}, {'l', 'L', '1'}};
 
-	for (i = 0; str[i]; i++)
-	{
-		for (j = 0; leet[j]; j += 2)
-		{
-			if (str[i] == leet[j])
-			{
-				str[i] = leet[j + 1];
-				break;
-			}
-		}
-	}
+  for (i = 0; str[i]; i++)
+  {
+    for (j = 0; j < 5; j++)
+    {
+      if (str[i] == leet_map[j][0] || str[i] == leet_map[j][1])
+      {
+        str[i] = leet_map[j][2];
+        break;
+      }
+    }
+  }
 
-	return (str);
+  return str;
 }
+
