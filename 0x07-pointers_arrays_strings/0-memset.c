@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  * _memset - Entry point
  * @s: pointer to the memory area to fill
