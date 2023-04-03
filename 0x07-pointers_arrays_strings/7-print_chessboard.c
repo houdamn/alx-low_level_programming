@@ -3,18 +3,21 @@
 
 /**
  * print_chessboard - prints the chessboard.
- * @a: the 2D array representing the chessboard.
+ * @a: a 2D array of characters representing the chessboard.
+ *
+ * Return: void.
  */
 void print_chessboard(char (*a)[8])
 {
-	int i, j;
-	for (i = 0; i < 8; i++);
+	int row, col;
+
+	for (row = 0; row < 8; row++)
 	{
-		for (j = 0; j < 8; j++)
-		{
-			putchar(a[i][j])
-		}
-		putchar('\n');
+		for (col = 0; col < 8; col++)
+			printf("%c", a[row][col]);
+
+		printf("\n");
 	}
 }
+
 
