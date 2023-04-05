@@ -1,39 +1,24 @@
+#include "main.h"
+
 /**
  * _sqrt_recursion - returns the natural square root of a number
- * @n: the number to compute the square root of
+ * @n: the number to calculate the square root of
  *
- * Return: the square root of n, or -1 if n doesn't have a natural square root
+ * Return: the natural square root of n, or -1 if n does not have a natural
+ * square root
  */
 int _sqrt_recursion(int n)
 {
-	int low = 1; /* move declaration to the beginning */
-	int high = n;
-	int result = 0;
-
+	int i = 1, result = 1;
 	if (n < 0)
-		return (-1);
+		return -1;
 	if (n == 0 || n == 1)
-		return (n);
-
-	while (low <= high)
+		return n;
+	while (result <= n)
 	{
-		int mid = (low + high) / 2;
-		int square = mid * mid;
-
-		if (square == n)
-		{
-			result = mid;
-			break;
-		}
-		else if (square < n)
-		{
-			low = mid + 1;
-			result = mid;
-		}
-		else
-		{
-			high = mid - 1;
-		}
+		i++;
+		result = i * i;
 	}
-	return ((result * result == n) ? result : -1);
+	return (result == n) ? i : -1;
 }
+
